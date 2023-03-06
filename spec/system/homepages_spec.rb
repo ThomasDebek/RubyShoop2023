@@ -4,8 +4,9 @@ RSpec.describe "Homepages", type: :system do
 
 
   before  do
-    product1 = FactoryBot.create(:product, name: 'product_1')
-    product2 = FactoryBot.create(:product, name: 'product_2')
+    category = FactoryBot.create(:category, name: 'Book')
+    product1 = FactoryBot.create(:product, name: 'product_1', category: category)
+    product2 = FactoryBot.create(:product, name: 'product_2', category: category)
   end
 
   it "displays all available Products" do

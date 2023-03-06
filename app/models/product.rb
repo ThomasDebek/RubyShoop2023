@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_one_attached :main_image
+  belongs_to :category
 
 
   def main_image_path
