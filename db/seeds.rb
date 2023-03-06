@@ -9,11 +9,15 @@
 require 'faker'
 
 puts "Product delete all"
-Product.destroy_all
 
-11.times do
-  Product.create(
-    name: Faker::Appliance.equipment,
-    price: Faker::Number.decimal(l_digits: 2)
+Product.destroy_all
+15.times do
+  p = Product.create(
+    name: Faker::Commerce.unique.product_name,
+    price: Faker::Number.decimal(l_digits: 2),
   )
+  puts "generating - product - #{p.name}"
+  downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{p.name.split.last}")
+  p.main_image.attach(io: downloaded_image, filename: "mi_#{p.id}.png")
+
 end
