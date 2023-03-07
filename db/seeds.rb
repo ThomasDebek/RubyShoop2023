@@ -8,10 +8,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-puts "Product and Category delete all"
+puts "Product Brands and Category delete all"
+puts "Generating new Product, Category, Brand"
 
 Product.destroy_all
 Category.destroy_all
+Brand.destroy_all
 
 4.times do
   Category.create(
@@ -19,14 +21,22 @@ Category.destroy_all
   )
 end
 
+4.times do
+  Brand.create(
+    name: Faker::Device.manufacturer
+  )
+end
+
 categories = Category.all
+brands = Brand.all
 
 
 15.times do
   p = Product.create(
     name: Faker::Commerce.unique.product_name,
     price: Faker::Number.decimal(l_digits: 2),
-    category: categories[rand(4)]
+    category: categories[rand(4)],
+    brand: brands[rand(4)]
   )
   puts "generating - product - #{p.name}"
   downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{p.name.split.last}")
