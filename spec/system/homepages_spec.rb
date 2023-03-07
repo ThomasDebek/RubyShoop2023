@@ -3,13 +3,10 @@ require 'rails_helper'
 RSpec.describe "Homepages", type: :system do
 
 
-  before  do
-    category_1 = FactoryBot.create(:category, name: 'category_1')
-    category_2 = FactoryBot.create(:category, name: 'category_2')
-
-    FactoryBot.create(:product, name: 'product_1', category: category_1)
-    FactoryBot.create(:product, name: 'product_2', category: category_2)
-  end
+  let!(:category_1) { FactoryBot.create(:category, name: 'category_1') }
+  let!(:category_2) {  FactoryBot.create(:category, name: 'category_2') }
+  let!(:product_1)  {  FactoryBot.create(:product, name: 'product_1', category: category_1) }
+  let!(:product_2)  {  FactoryBot.create(:product, name: 'product_2', category: category_2) }
 
   it "displays all available Products" do
     visit "/"
