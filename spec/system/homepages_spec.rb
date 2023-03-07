@@ -4,9 +4,11 @@ RSpec.describe "Homepages", type: :system do
 
 
   before  do
-    category = FactoryBot.create(:category, name: 'Book')
-    product1 = FactoryBot.create(:product, name: 'product_1', category: category)
-    product2 = FactoryBot.create(:product, name: 'product_2', category: category)
+    category_1 = FactoryBot.create(:category, name: 'category_1')
+    category_2 = FactoryBot.create(:category, name: 'category_2')
+
+    FactoryBot.create(:product, name: 'product_1', category: category_1)
+    FactoryBot.create(:product, name: 'product_2', category: category_2)
   end
 
   it "displays all available Products" do
@@ -19,5 +21,12 @@ RSpec.describe "Homepages", type: :system do
     assert_selector "h4.card-title", count: 2
   end
 
+  it 'displays only Products from chosen category' do
+    visit '/'
+    click_on 'category_1'
+
+    assert_selector 'h4.card-title', text: 'product_1'
+    assert_selector 'h4.card-title', count: 1
+  end
 
 end
