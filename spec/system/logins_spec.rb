@@ -8,4 +8,13 @@ RSpec.describe "Logins", type: :system do
       expect(page).to have_link('Log In')
     end
   end
+
+  context 'when wisiting the Sign Up Page' do
+    it 'Log In buttons is visible' do
+      visit '/'
+      click_on('Sign Up')
+      expect(page).to have_link('Log In')
+    end
+  end
+
 end
