@@ -11,11 +11,19 @@
   </head>
 
   <body>
-   <div class="container">
-     <%= render 'layouts/flash_messages' %>
-     <%= render 'layouts/navigation'%>
-     <%= render 'layouts/sidebar' %>
-     <%= yield %>
-   </div>
+  <%= render 'layouts/navigation' %>
+  <%= render 'layouts/flash_messages' %>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-9">
+        <id></id>
+        <%= render 'layouts/sidebar' %>
+
+        <%= yield %>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
