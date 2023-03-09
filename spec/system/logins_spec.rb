@@ -48,11 +48,27 @@ RSpec.describe "Logins", type: :system do
       find('input[name="commit"]').click
       expect(page).to have_content('Email not found')
     end
-    
+  end
+
+  context 'when the user is Logged In'do
+    before do
+      visit '/'
+      click_on('Log In')
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: 'password'
+      find('input[name="commit"]').click
+    end
+
+    it 'user can see the Log Out button' do
+      expect(page).to have_link('Log Out')
+    end
+
+
+
   end
 
 
-  
+
 
   context 'when visiting the Home Page' do
     it 'Log In button is visible' do
