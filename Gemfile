@@ -19,6 +19,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'cssbundling-rails'
 gem 'faker'
 gem 'hirb'
+gem 'devise'
 # gem "redis", "~> 4.0"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
@@ -48,4 +49,3 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "devise", "~> 4.9"
