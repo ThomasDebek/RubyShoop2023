@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "AdminDashboards", type: :system do
-  let!(:user) { FactoryBot.create(:user) }
-  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:user) { create(:user) }
+  let!(:admin) { create(:admin) }
 
   context 'when not logged' do
     before do
