@@ -8,13 +8,20 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-puts "Product Brands and Category User delete all"
-puts "Generating new Product, Category, Brand, User"
+puts "Product Brands and Category User Admin delete all"
+puts "Generating  Product, Category, Brand, User, Admin "
 
 Product.destroy_all
 Category.destroy_all
 Brand.destroy_all
 User.destroy_all
+Admin.destroy_all
+
+
+Admin.create(
+  email: "admin@admin.com",
+  password: "password"
+)
 
 User.create(
   email: "john@example.com",
