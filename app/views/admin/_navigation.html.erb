@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-3">
+  <div class="container">
+    <a class="navbar-brand" href="#">Ruby Lovers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home
+            <span class="sr-only">
+              <% if admin_signed_in? %>
+                 (<%= current_admin.email %>)
+              <% end  %>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if admin_signed_in? %>
+          <li class="nav-item active px-1"> <%= link_to "Log Out", destroy_admin_session_path, method: :delete, data: {confirm: 'Are you sure'}, class:"nav-link btn btn-outline-secondary btn-inverse" %></li>
+        <% end  %>
+      </ul>
+    </div>
+  </div>
+</nav>
