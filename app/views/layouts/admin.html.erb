@@ -12,7 +12,7 @@
 
 <body>
 
-<%= render 'admin/navigation'%>
+<%= render 'admin/navigation' %>
 <%= render 'layouts/flash_messages' %>
 
 <div class="container">
@@ -21,7 +21,19 @@
       <%= yield %>
     </div>
     <div class="col-lg-3">
-      <%= render 'layouts/sidebar' %>
+      <h4 class="my-4">Categories</h4>
+      <div class="list-group">
+        <% Category.all.each do |category| %>
+          <%= link_to category.name, admin_admin_root_path(category: category.id), class: "list-group-item" %>
+        <% end %>
+      </div>
+
+      <h4 class="my-4">Brands</h4>
+      <div class="list-group">
+        <% Brand.all.each do |brand| %>
+          <%= link_to brand.name, admin_admin_root_path(brand: brand.id), class: "list-group-item" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
