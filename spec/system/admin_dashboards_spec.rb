@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "AdminDashboards", type: :system do
-  let!(:user) { FactoryBot.create(:user) }
-  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:user) { create(:user) }
+  let!(:admin) { create(:admin) }
 
   context 'when not logged' do
     before do
@@ -47,8 +47,9 @@ RSpec.describe "AdminDashboards", type: :system do
     end
 
     it 'is possible to access admin root path' do
-      expect(page).to have_current_path(admin_root_path)
+      expect(page).to have_current_path('/admin')
     end
+
 
   end
 

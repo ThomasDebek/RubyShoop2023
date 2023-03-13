@@ -18,7 +18,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'cssbundling-rails'
 gem 'faker'
-gem 'hirb'
+
 gem 'devise'
 # gem "redis", "~> 4.0"
 # gem "kredis"
@@ -39,6 +39,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'web-console'
+  gem 'hirb'
   # gem "rack-mini-profiler"
   # gem "spring"
 end
