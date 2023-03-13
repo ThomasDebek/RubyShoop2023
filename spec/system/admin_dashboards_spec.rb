@@ -13,7 +13,7 @@ RSpec.describe "AdminDashboards", type: :system do
       expect(page).to have_current_path(root_path)
     end
 
-    it 'dispaly unauthorized warning' do
+    it 'display unauthorized warning' do
       expect(page).to have_content('You are not authorized')
     end
   end
