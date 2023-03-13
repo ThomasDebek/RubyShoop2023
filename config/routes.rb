@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   namespace :admin do
-    get 'products/index'
-    root "products#index"
+    root "products#index", as: :admin_root
+    resources :products
   end
 
 end
