@@ -25,6 +25,19 @@ RSpec.describe "Admin Dashbards", type: :request do
       end
     end
 
+    context 'when logged in as Admin' do
+      before do
+        login_admin(admin)
+      end
+
+      it 'is possible to access admin root path' do
+        get '/admin'
+        expect(response.body).to include('Admin Panel')
+      end
+
+
+    end
+
 
   end
 
