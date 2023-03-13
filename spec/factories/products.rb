@@ -4,5 +4,6 @@ FactoryBot.define do
     price { "9.99" }
     brand
     category
+    main_image { "image.png" }
   end
 end

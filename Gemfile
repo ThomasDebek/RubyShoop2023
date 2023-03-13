@@ -40,7 +40,6 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'web-console'
   gem 'hirb'
-  gem 'bullet'
   # gem "rack-mini-profiler"
   # gem "spring"
 end
