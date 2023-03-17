@@ -50,7 +50,7 @@ RSpec.describe "Homepages", type: :system do
     end
   end
 
-  context 'Brand and Category filters are applied' do
+  context 'when Brand and Category filters are applied' do
     before do
       visit '/'
       click_on brand.name
