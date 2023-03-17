@@ -26,6 +26,12 @@ RSpec.describe "Products", type: :system do
         expect(page).to have_content product_name
       end
 
+      it 'removes product from the home page' do
+        visit '/'
+        expect(page).not_to have_content product.name
+      end
+
+
       it 'is visible on the home page' do
         visit '/'
         expect(page).to have_content product_name
