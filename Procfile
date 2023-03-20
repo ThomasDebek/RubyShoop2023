@@ -1,2 +1,2 @@
-web: unset PORT && bin/rails server
-css: yarn build:css --watch
+rails: ./bin/rails s
+webpack: ./bin/webpack-dev-server
