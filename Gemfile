@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.2.1'
 
 gem 'bootsnap', require: false
 gem 'importmap-rails'
@@ -15,6 +15,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'aws-sdk-s3'
 
 gem 'cssbundling-rails'
 gem 'faker'
@@ -24,8 +25,8 @@ gem 'devise'
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
 
-# gem "sassc-rails"
-# gem "image_processing", "~> 1.2"
+gem "sassc-rails"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
