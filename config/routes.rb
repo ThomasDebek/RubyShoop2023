@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  get 'carts/:id', to: "carts#show", as: "cart"
+  post 'carts', to: "carts#add", as: "add_to_cart"
+
+
 end
 
 

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :initialize_cart
   def home
     @products = Product.includes([:main_image_attachment]).all
     @products = @products.filter_by_category(params[:category]) if params[:category].present?
