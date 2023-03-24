@@ -8,8 +8,10 @@ class Cart < ApplicationRecord
 
   def add_product(product)
     current_item = line_items.find_by(product_id: product.id)
-
     line_items.build(product_id: product.id) unless current_item
   end
+
+
+  delegate :empty?, to: :line_items
 
 end

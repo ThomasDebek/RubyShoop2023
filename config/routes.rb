@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   namespace :admin do
-    root "products#index", as: :admin_root
+    root 'products#index', as: :admin_root
     resources :products
   end
 
-  get 'carts/:id', to: "carts#show", as: "cart"
-  post 'carts', to: "carts#add", as: "add_to_cart"
+  get 'carts/:id', to: 'carts#show', as: 'cart'
+  delete 'carts/:id', to: 'carts#destroy'
+  post 'carts', to: 'carts#add', as: 'add_to_cart'
 
 
 end

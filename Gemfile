@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'aws-sdk-s3'
+gem 'pry-rails'
 
 gem 'cssbundling-rails'
 gem 'faker'

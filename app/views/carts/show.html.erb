@@ -1,8 +1,16 @@
-<ul>
-  <% @cart.line_items.each do |line_item| %>
-    <li>
-      <%= line_item.product.name %>  <%= line_item.product.price  %>
-    </li>
-  <% end %>
-</ul>
-<p id="cart_total"><strong>Total: $<%= @cart.total %></strong></p>
+<% if @cart.empty? %>
+  YOUR CART IS EMPTY
+<% else %>
+  <ul>
+    <% @cart.line_items.each do |line_item| %>
+      <li>
+        <%= line_item.product.name %>
+        <%= line_item.product.price  %>
+      </li>
+    <% end %>
+  </ul>
+  <p id="cart_total"><strong>Total: $<%= @cart.total %></strong></p>
+<% end %>
+
+<%= button_to "Empty cart", cart_path(@cart), method: :delete, data: {confirm: "Do you really want to empty the cart?"},
+              class: "btn btn-style-1 btn-primary btn-block" %>
