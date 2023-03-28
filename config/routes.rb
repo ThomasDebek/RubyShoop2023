@@ -13,9 +13,4 @@ Rails.application.routes.draw do
   get 'carts/:id', to: 'carts#show', as: 'cart'
   delete 'carts/:id', to: 'carts#destroy'
   post 'carts', to: 'carts#add', as: 'add_to_cart'
-
-
 end
-
-
-

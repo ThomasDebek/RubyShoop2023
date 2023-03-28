@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Delete Products", type: :system do
+RSpec.describe 'Delete Products', type: :system do
   context 'when logged in as admin' do
     let!(:admin) { create(:admin) }
     let!(:product) { create(:product) }
@@ -25,6 +27,3 @@ RSpec.describe "Delete Products", type: :system do
     end
   end
 end
-
-
-

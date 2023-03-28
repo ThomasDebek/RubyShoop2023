@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Logins", type: :system do
+RSpec.describe 'Logins', type: :system do
   let!(:user) { FactoryBot.create(:user) }
 
   context 'when providing valid details' do
@@ -43,14 +45,14 @@ RSpec.describe "Logins", type: :system do
     end
 
     it 'user cannot reset password ' do
-      click_on ('Forgot your password?')
+      click_on('Forgot your password?')
       fill_in 'user_email', with: 'fake_email@example.com'
       find('input[name="commit"]').click
       expect(page).to have_content('Email not found')
     end
   end
 
-  context 'when the user is Logged In'do
+  context 'when the user is Logged In' do
     before do
       visit '/'
       click_on('Log In')
@@ -62,13 +64,7 @@ RSpec.describe "Logins", type: :system do
     it 'user can see the Log Out button' do
       expect(page).to have_link('Log Out')
     end
-
-
-
   end
-
-
-
 
   context 'when visiting the Home Page' do
     it 'Log In button is visible' do
@@ -85,5 +81,4 @@ RSpec.describe "Logins", type: :system do
       expect(page).to have_link('Log In')
     end
   end
-
 end

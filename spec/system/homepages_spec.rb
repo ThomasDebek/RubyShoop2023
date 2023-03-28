@@ -1,20 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Homepages", type: :system do
-
+RSpec.describe 'Homepages', type: :system do
   let!(:category) { create(:category) }
   let!(:brand) { create(:brand) }
-  let!(:product_c_b)  { create(:product, name: 'product_1_1', category: category, brand: brand) }
-  let!(:product_c)  { create(:product, name: 'product_1_2', category: category) }
-  let!(:product_b)  { create(:product, name: 'product_2_1', brand: brand) }
+  let!(:product_c_b)  { create(:product, name: 'product_1_1', category:, brand:) }
+  let!(:product_c)  { create(:product, name: 'product_1_2', category:) }
+  let!(:product_b)  { create(:product, name: 'product_2_1', brand:) }
 
   context 'when no filters are applied' do
     it 'displays all available Products' do
       visit '/'
 
       expect(page).to have_css('h4.card-title', text: product_c_b.name)
-                        .and  have_css('h4.card-title', text: product_c.name)
-                                .and  have_css('h4.card-title', text: product_b.name)
+        .and have_css('h4.card-title', text: product_c.name)
+        .and have_css('h4.card-title', text: product_b.name)
     end
   end
 
@@ -26,7 +27,7 @@ RSpec.describe "Homepages", type: :system do
 
     it 'displays only Products from chosen Category' do
       expect(page).to have_css('h4.card-title', text: product_c_b.name)
-                        .and  have_css('h4.card-title', text: product_c.name)
+        .and  have_css('h4.card-title', text: product_c.name)
     end
 
     it 'does not display Products not from chosen Category' do
@@ -42,7 +43,7 @@ RSpec.describe "Homepages", type: :system do
 
     it 'displays only Products from chosen Brand' do
       expect(page).to have_css('h4.card-title', text: product_c_b.name)
-                        .and  have_css('h4.card-title', text: product_b.name)
+        .and  have_css('h4.card-title', text: product_b.name)
     end
 
     it 'does not display Products not from chosen Brand' do
@@ -69,5 +70,4 @@ RSpec.describe "Homepages", type: :system do
       expect(page).not_to have_css('h4.card-title', text: product_b.name)
     end
   end
-
 end

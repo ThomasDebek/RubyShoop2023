@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
   before_action :initialize_cart
   def home
@@ -9,5 +11,4 @@ class PagesController < ApplicationController
   def filters_params
     params.permit(:category, :brand)
   end
-
 end

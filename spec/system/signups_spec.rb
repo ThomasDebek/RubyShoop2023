@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Signups", type: :system do
-
+RSpec.describe 'Signups', type: :system do
   context 'when providing validate details' do
     it 'allows user to create account' do
       visit '/'

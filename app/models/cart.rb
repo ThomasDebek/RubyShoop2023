@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :products, through: :line_items
@@ -11,7 +13,5 @@ class Cart < ApplicationRecord
     line_items.build(product_id: product.id) unless current_item
   end
 
-
   delegate :empty?, to: :line_items
-
 end

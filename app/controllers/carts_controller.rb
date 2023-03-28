@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartsController < ApplicationController
   before_action :initialize_cart
 
@@ -24,5 +26,4 @@ class CartsController < ApplicationController
     flash[:notice] = 'Cart has been emptied'
     redirect_to root_path
   end
-
 end
