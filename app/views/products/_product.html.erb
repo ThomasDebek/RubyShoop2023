@@ -4,7 +4,7 @@
       <%= link_to image_tag(product.main_image_path, class: 'card-img-top'), product_path(product) %>
       <div class="card-body">
         <h4 class="card-title">
-          <%=link_to product.name %>
+          <%= link_to product.name, product_path(product) %>
         </h4>
         <h5><%= product.price %> USD</h5>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
