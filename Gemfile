@@ -10,7 +10,6 @@ gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
-gem 'pry-rails'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 gem 'sprockets-rails'
@@ -20,6 +19,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'cssbundling-rails'
 gem 'faker'
+gem 'dry-monads', '~> 1.6'
 
 gem 'devise'
 # gem "redis", "~> 4.0"

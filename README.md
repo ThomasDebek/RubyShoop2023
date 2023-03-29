@@ -21,4 +21,8 @@ http://localhost:3000/admins/sign_in    admin@admin.com  password
 http://localhost:3000/users/sign_in     john@example.com password 
 
 
+Gems more importnt:
+* dry-monads
+
+
 * ...
