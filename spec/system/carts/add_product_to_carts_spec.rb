@@ -42,7 +42,6 @@ RSpec.describe 'Cart - Adding Product', type: :system do
       end
     end
 
-
     context 'when not logged in' do
       before do
         visit '/'
@@ -60,11 +59,7 @@ RSpec.describe 'Cart - Adding Product', type: :system do
         click_on product.name.to_s
         expect(page).not_to have_content 'Add to Cart'
       end
-
     end
-
-
-
   end
 end
 
