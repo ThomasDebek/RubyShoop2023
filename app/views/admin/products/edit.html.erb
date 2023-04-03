@@ -1,4 +1,5 @@
-<h2>Edit admin product</h2>
+<h2 class="text-center">Edit Admin Product</h2>
+<%= render partial: 'admin/products/form' %>
 
 
-<%= link_to 'Back Admin Products', admin_products_path(@product) %>
+<%= link_to 'Back Admin Products', admin_products_path(@product), class: 'btn btn-primary' %>
