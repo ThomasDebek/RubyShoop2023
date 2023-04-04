@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "AdminDashboards", type: :system do
+RSpec.describe 'AdminDashboards', type: :system do
   let!(:user) { create(:user) }
   let!(:admin) { create(:admin) }
 
@@ -49,8 +51,5 @@ RSpec.describe "AdminDashboards", type: :system do
     it 'is possible to access admin root path' do
       expect(page).to have_current_path('/admin')
     end
-
-
   end
-
 end

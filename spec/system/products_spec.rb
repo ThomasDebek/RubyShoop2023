@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Products", type: :system do
+RSpec.describe 'Products', type: :system do
   context 'when creating a new product' do
     before do
       login_as(create(:admin))
@@ -30,7 +32,6 @@ RSpec.describe "Products", type: :system do
         visit '/'
         expect(page).not_to have_content product.name
       end
-
 
       it 'is visible on the home page' do
         visit '/'

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Admin Dashboard", type: :request do
+RSpec.describe 'Admin Dashboard', type: :request do
   let!(:user) { create(:user) }
-  let!(:admin) { create(:admin)}
+  let!(:admin) { create(:admin) }
 
   describe 'GET / admin' do
     context 'when not logged in' do
@@ -17,7 +19,7 @@ RSpec.describe "Admin Dashboard", type: :request do
     context 'when logged in as User' do
       it 'redirect to root path' do
         login_user(user)
-        get "/admin"
+        get '/admin'
         expect(response).to redirect_to(root_path)
         follow_redirect!
         expect(response.body).to include('You are not authorized')
@@ -31,7 +33,5 @@ RSpec.describe "Admin Dashboard", type: :request do
         expect(response.body).to include('Admin Panel')
       end
     end
-
   end
-
 end

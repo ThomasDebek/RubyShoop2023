@@ -1,0 +1,27 @@
+<h1>Admin product</h1>
+
+<div class="col-lg-6 offset-lg-3">
+  <div class="card h-100">
+    <%= image_tag( @product.main_image_path, class: 'card-img-top product-img') %>
+    <div class="card-body">
+      <h4 class="card-title product-name text-center">
+        <%= @product.name %>
+      </h4>
+      <h5 class="product-price">
+       <p>Price:  <%= @product.price %> USD </p>
+      </h5>
+      <h5 class="product-price">
+        <p>Brand: <%= @product.brand&.name %></p>
+      </h5>
+      <h5 class="product-price">
+        <p>Category: <%= @product.category&.name %></p>
+      </h5>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<%= link_to 'Back Admin Products', admin_products_path(@product), class: 'btn btn-primary' %>
