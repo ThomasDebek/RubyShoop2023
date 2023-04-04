@@ -9,10 +9,10 @@ RSpec.describe 'POST/cart', type: :request do
       login_as(user, scope: :user)
     end
 
-    it 'creates new LineItem' do
+    it 'creates new CartItem' do
       expect do
         post '/cart', params: { product_id: product.id }
-      end.to change(LineItem, :count).by(1)
+      end.to change(CartItem, :count).by(1)
     end
 
   end
@@ -21,10 +21,10 @@ RSpec.describe 'POST/cart', type: :request do
   context 'when not logged in user' do
     let!(:product) { create(:product)}
 
-    it 'does not create LineItem' do
+    it 'does not create CartItem' do
       expect do
         post '/cart', params: { product_id: product.id }
-      end.not_to change(LineItem, :count )
+      end.not_to change(CartItem, :count )
     end
   end
 
