@@ -4,7 +4,6 @@ require 'dry/monads'
 
 class AddProductToCart
   include Dry::Monads[:result]
-
   def call(cart:, product_id:)
     find_product(product_id).bind do |product|
       if cart.line_items.find_by(product_id: product.id)
@@ -17,7 +16,6 @@ class AddProductToCart
   end
 
   private
-
   def find_product(id)
     product = Product.find_by(id: id)
 
