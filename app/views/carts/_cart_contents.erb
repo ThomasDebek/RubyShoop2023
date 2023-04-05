@@ -29,6 +29,7 @@
     <div>
       <%= button_to 'Empty Cart', cart_path, method: :delete, data: { confirm: "Do you really want to empty the cart?" },
                     class: "btn btn-block btn-outline-danger" %>
+      <%= button_to 'Checkout', orders_path, method: :post, class: "btn btn-block  btn-outline-dark" %>
     </div>
     <div>
     </div>
